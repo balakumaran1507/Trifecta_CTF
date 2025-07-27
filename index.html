@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trifecta Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #1b1b1b;
+      color: #f2f2f2;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #00ff99;
+    }
+
+    a {
+      color: #ffcc00;
+      text-decoration: none;
+    }
+
+    .vuln-section {
+      margin-bottom: 3rem;
+      border-left: 3px solid #00ff99;
+      padding-left: 1rem;
+    }
+
+    footer {
+      margin-top: 4rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+
+    body::after {
+      content: "anBfanVzdF93YXN0";
+      font-size: 1px;
+      color: #1b1b1b;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to CyberSec 101: Funny Vulnerabilities Explained</h1>
+  <p>Here's a walkthrough of common vulnerabilities in beginner CTFs. Don't worry, none of these are real. 😉</p>
+
+  <div class="vuln-section">
+    <h2>1. SQL Injection</h2>
+    <p>Classic. Like the Maggi of web vulns. Ever tried typing <code>' OR 1=1 --</code> into a login form? You’re
+      basically becoming Neo.</p>
+    <pre>// NOTE: This login query is secure, trust me bro
+query = "SELECT * FROM users WHERE username = '" + user + "' AND password = '" + pass + "';"</pre>
+  </div>
+
+  <div class="vuln-section">
+    <h2>2. XSS (Cross-Site Scripting)</h2>
+    <p>Who doesn’t love popups? Here’s a free sample: <code>&lt;script&gt;alert('hacked')&lt;/script&gt;</code></p>
+    <pre>// This is totally sanitized
+comment.innerHTML = userComment;</pre>
+  </div>
+
+  <div class="vuln-section">
+    <h2>3. LFI (Local File Inclusion)</h2>
+    <p>Why read docs when you can read <code>/etc/passwd</code>?</p>
+    <pre>// Pro tip: Never trust GET parameters, but we do anyway
+include($_GET['page']);</pre>
+  </div>
+
+  <div class="vuln-section">
+    <h2>4. IDOR (Insecure Direct Object Reference)</h2>
+    <p>Hey, if user 123 can access their profile... can user 124 access yours? 🤔</p>
+    <pre>// You get an ID! Everyone gets an ID!
+fetch(`/profile?id=${userId}`)</pre>
+  </div>
+
+  <div class="vuln-section">
+    <h2>5. Hardcoded Credentials</h2>
+    <p>Because nothing screams security like <code>admin:admin</code></p>
+    <pre>// TODO: Remove this before prodconst creds = { username: "admin", password: "admin123" };</pre>
+  </div>
+
+  <div class="vuln-section">
+    <h2>Bonus Easter Egg 🥚</h2>
+    <p>Somewhere in this page... a mystery awaits. Open your DevTools and dig!</p>
+  </div>
+
+  <script>
+    console.log("Initializing Security Theater...");
+    const part3 = "aW5nX3VyX3RpbWV9";
+    console.log("Final sequence unlocked:", atob(part3));
+  </script>
+
+  <footer>
+    <p>Made with ❤️ by DefinitelyNotAHacker Inc. | <a href="/404.html">404 Page</a></p>
+  </footer>
+</body>
+
+</html>
